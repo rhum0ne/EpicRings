@@ -2,3 +2,6 @@ name: EpicRings
 version: '1.0-SNAPSHOT'
 main: fr.rhum0ne.epicRings.EpicRings
 api-version: '1.21'
+commands:
+  rings:
+    description: Enable or Disable a ring.
