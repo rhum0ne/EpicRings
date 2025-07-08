@@ -11,13 +11,18 @@ public class Ring extends BukkitRunnable {
 
     private final ConcurrentLinkedQueue<Player> users = new ConcurrentLinkedQueue<>();
 
-    public Ring() {
+    private final Particle particle;
+
+    public Ring(Particle particle, int period) {
+        this.particle = particle;
+
+        runTaskTimer(EpicRings.getPlugin(EpicRings.class), 0, period);
     }
 
     @Override
     public void run() {
         for(Player player : users){
-            player.getWorld().spawnParticle(Particle.WAX_ON, player.getLocation(), 1, 0, 0, 0);
+            player.getWorld().spawnParticle(particle, player.getLocation(), 1, 0, 0, 0);
         }
     }
 

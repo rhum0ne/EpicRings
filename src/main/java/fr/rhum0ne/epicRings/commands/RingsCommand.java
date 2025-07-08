@@ -22,6 +22,16 @@ public class RingsCommand implements CommandExecutor {
             return true;
         }
 
+        if(strings.length == 1 && strings[0].equalsIgnoreCase("reload")){
+            if(!player.hasPermission("epicrings.reload")){
+                player.sendMessage("You don't have permission to use this command");
+                return true;
+            }
+            plugin.reload();
+            player.sendMessage("Config reloaded");
+            return true;
+        }
+
         if(strings.length != 2){ return false; }
 
         String newState = strings[0];
