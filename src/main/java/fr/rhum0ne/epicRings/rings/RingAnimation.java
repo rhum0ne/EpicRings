@@ -7,12 +7,15 @@ import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.entity.Player;
 
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 @Getter
 @Setter
 public abstract class RingAnimation {
 
     private final int states;
     private int currentState;
+    private Ring ring;
 
     public RingAnimation(int states){
         this.states = states;
@@ -26,5 +29,5 @@ public abstract class RingAnimation {
         }
     }
 
-    public abstract void showState(Player player);
+    public abstract void showState(ConcurrentLinkedQueue<Player> players);
 }

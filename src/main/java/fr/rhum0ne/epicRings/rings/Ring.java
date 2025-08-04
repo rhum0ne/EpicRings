@@ -1,33 +1,33 @@
 package fr.rhum0ne.epicRings.rings;
 
 import fr.rhum0ne.epicRings.EpicRings;
+import lombok.Getter;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+@Getter
 public class Ring extends BukkitRunnable {
 
     private final ConcurrentLinkedQueue<Player> users = new ConcurrentLinkedQueue<>();
 
     private final Particle particle;
-    private final int maxFrame;
     private final RingAnimation animation;
 
-    public Ring(Particle particle, int period, int maxFrame, RingAnimation animation) {
+    public Ring(Particle particle, int period, RingAnimation animation) {
         this.particle = particle;
-        this.maxFrame = maxFrame;
         this.animation = animation;
+
+        animation.setRing(this);
 
         runTaskTimer(EpicRings.getPlugin(EpicRings.class), 0, period);
     }
 
     @Override
     public void run() {
-        for(Player player : users){
-            animation.showState(player);
-        }
+        animation.showState(users);
 
         animation.nextState();
     }
