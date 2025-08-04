@@ -14,7 +14,7 @@ public class NaryaAnimation extends RingAnimation {
 
 
     public NaryaAnimation() {
-        super(60);
+        super(40);
     }
 
     @Override
@@ -22,8 +22,8 @@ public class NaryaAnimation extends RingAnimation {
         //Pour faire l'aller-retour (30 est le plus haut, 0 le plus bas)
         int h = Math.abs(this.getCurrentState() - this.getStates()/2);
 
-        //Donc 30 = 90°, 15 = 0°, 0 = -90°
-        double phi = Math.toRadians(6*h - 90);
+        //Donc 20 = 90°, 10 = 0°, 0 = -90°
+        double phi = Math.toRadians(9*h - 90);
 
         showCircle(players, phi, RADIUS, CoordSystem.SPHERICAL, this.getRing().getParticle());
     }
