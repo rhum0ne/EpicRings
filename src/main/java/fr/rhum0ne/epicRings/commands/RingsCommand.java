@@ -1,7 +1,7 @@
 package fr.rhum0ne.epicRings.commands;
 
 import fr.rhum0ne.epicRings.EpicRings;
-import fr.rhum0ne.epicRings.Ring;
+import fr.rhum0ne.epicRings.rings.Ring;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -27,7 +27,7 @@ public class RingsCommand implements CommandExecutor {
                 player.sendMessage("You don't have permission to use this command");
                 return true;
             }
-            plugin.reload();
+
             player.sendMessage("Config reloaded");
             return true;
         }

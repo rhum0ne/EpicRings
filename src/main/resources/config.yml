@@ -1,7 +1,0 @@
-rings:
-  naria:
-    particle: WAX_ON
-    period: 1
-  test:
-    particle:
-    period: 20
