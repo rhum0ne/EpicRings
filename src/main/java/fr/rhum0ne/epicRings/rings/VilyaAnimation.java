@@ -1,12 +1,11 @@
 package fr.rhum0ne.epicRings.rings;
 
 import fr.rhum0ne.epicRings.utils.CoordSystem;
-import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-import static fr.rhum0ne.epicRings.utils.CirclesUtils.showCircle;
+import static fr.rhum0ne.epicRings.utils.ParticlesUtils.showCircle;
 
 public class VilyaAnimation extends RingAnimation {
 

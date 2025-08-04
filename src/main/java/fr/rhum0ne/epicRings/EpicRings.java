@@ -2,6 +2,7 @@ package fr.rhum0ne.epicRings;
 
 import fr.rhum0ne.epicRings.commands.RingsCommand;
 import fr.rhum0ne.epicRings.rings.NaryaAnimation;
+import fr.rhum0ne.epicRings.rings.NenyaAnimation;
 import fr.rhum0ne.epicRings.rings.Ring;
 import fr.rhum0ne.epicRings.rings.VilyaAnimation;
 import org.bukkit.Particle;
@@ -20,6 +21,7 @@ public final class EpicRings extends JavaPlugin {
         this.getCommand("rings").setExecutor(new RingsCommand());
 
         registerRing("narya", new Ring(Particle.FLAME, 2, new NaryaAnimation()));
+        registerRing("nenya", new Ring(Particle.SNOWFLAKE, 1, new NenyaAnimation()));
         registerRing("vilya", new Ring(Particle.WAX_OFF, 20, new VilyaAnimation()));
     }
 
