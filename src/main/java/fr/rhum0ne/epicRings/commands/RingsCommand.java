@@ -38,9 +38,9 @@ public class RingsCommand implements CommandExecutor {
 
         // Action attendue : enable/disable (avec quelques synonymes FR/EN)
         final boolean enable;
-        if (equalsAnyIgnoreCase(actionRaw, "enable", "on", "activer", "active", "activate")) {
+        if (actionRaw.equalsIgnoreCase("enable")) {
             enable = true;
-        } else if (equalsAnyIgnoreCase(actionRaw, "disable", "off", "desactiver", "désactiver", "desactive", "deactivate")) {
+        } else if (actionRaw.equalsIgnoreCase("disable")) {
             enable = false;
         } else {
             sendUsage(player, label);
@@ -88,12 +88,5 @@ public class RingsCommand implements CommandExecutor {
                 + ChatColor.DARK_AQUA + "/" + label + " enable speed "
                 + ChatColor.GRAY + "• "
                 + ChatColor.DARK_AQUA + "/" + label + " disable speed");
-    }
-
-    private boolean equalsAnyIgnoreCase(String input, String... choices) {
-        for (String c : choices) {
-            if (input.equalsIgnoreCase(c)) return true;
-        }
-        return false;
     }
 }
