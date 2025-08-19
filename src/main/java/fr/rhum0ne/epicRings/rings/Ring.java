@@ -22,7 +22,7 @@ public class Ring extends BukkitRunnable {
 
         animation.setRing(this);
 
-        runTaskTimer(EpicRings.getPlugin(EpicRings.class), 0, period);
+        runTaskTimer(EpicRings.plugin, 0, period);
     }
 
     @Override

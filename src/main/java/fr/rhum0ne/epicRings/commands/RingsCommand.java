@@ -14,8 +14,8 @@ public class RingsCommand implements CommandExecutor {
     private static final String PREFIX = ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "EpicRings"
             + ChatColor.GRAY + " » " + ChatColor.RESET;
 
-    public RingsCommand() {
-        this.plugin = EpicRings.getPlugin(EpicRings.class);
+    public RingsCommand(EpicRings plugin) {
+        this.plugin = plugin;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class RingsCommand implements CommandExecutor {
         }
 
         // Récupération du ring
-        Ring ring = plugin.getRing(ringName);
+        Ring ring = plugin.getRingsManager().getRing(ringName);
         if (ring == null) {
             player.sendMessage(PREFIX + ChatColor.RED + "Anneau introuvable : " + ChatColor.YELLOW + ringName + ChatColor.GRAY + ".");
             return true;
